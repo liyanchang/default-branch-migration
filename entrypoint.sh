@@ -46,6 +46,6 @@ if [ "$GITHUB_REF" = "refs/heads/$PREVIOUS_DEFAULT" ]; then
 	git clone $GIT_REPO target
 	cd target
 	git checkout -b $NEW_DEFAULT $PREVIOUS_DEFAULT
-	git push --set-upstream origin main
+	git push --set-upstream origin $NEW_DEFAULT
 	exit
 fi;
