@@ -77,7 +77,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Migrate
-        uses: liyanchang/default-branch-migration@v1.0.0
+        uses: liyanchang/default-branch-migration@v1.0.1
         with:
           # GitHub will fill in this template with the correct token
           # You don't need to edit this line
@@ -87,3 +87,7 @@ jobs:
           # TODO: Change this to the default branch you want to migrate away to
           new_default: main
 ```
+
+If you're in an organization, you may need to [enable GitHub actions](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/disabling-or-limiting-github-actions-for-your-organization). Namely, click on the repo settings, then click on Actions in the left menu bar, then `Enable local & third party Actions`.
+![Enable local & third party actions screenshot](https://help.github.com/assets/images/help/repository/enable-org-actions.png)
+
