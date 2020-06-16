@@ -43,7 +43,7 @@ if [ "$GITHUB_REF" = "refs/heads/$PREVIOUS_DEFAULT" ]; then
 	echo "Update $NEW_DEFAULT to match $PREVIOUS_DEFAULT"
 	GIT_REPO="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 	# Specify repo folder as target so it's clear what folder to cd into
-	git clone $GIT_REPO target
+	git clone --depth 1 -b $PREVIOUS_DEFAULT $GIT_REPO target
 	cd target
 	git checkout -b $NEW_DEFAULT $PREVIOUS_DEFAULT
 	git push --set-upstream origin $NEW_DEFAULT
